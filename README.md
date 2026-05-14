@@ -11,12 +11,12 @@ This project uses a trained AI model and computer vision to detect eye blinks an
  flowchart TD
     A[Webcam Input] --> B[OpenCV Face Detection\nHaar Cascade Classifier]
     B --> C[Eye Region Extraction]
-    C --> D[Blink Detection\nEye Aspect Ratio - EAR]
+    C --> D[Blink Detection via EAR]
     D --> E{Blink Detected?}
-    E -- Yes --> F[Python Serial Communication\npyserial]
+    E -- Yes --> F[Python Serial Communication-pyserial]
     E -- No --> C
     F --> G[Arduino Uno]
-    G --> H[Device Control Output\nLED / Relay / Assistive Device]
+    G --> H[Device Control Output]
 `---
 
 Latency: ~30-50ms (webcam frame rate dependent)
