@@ -4,7 +4,7 @@ import time
 import pyttsx3
 
 # Arduino connection
-arduino = serial.Serial('COM5', 9600)
+arduino = serial.Serial('COM5a', 9600)
 time.sleep(2)
 
 # Voice engine part
