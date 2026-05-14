@@ -8,23 +8,20 @@ This project uses a trained AI model and computer vision to detect eye blinks an
 ##  System Architecture
 
 ```mermaid
- flowchart TD
-    A[Webcam Input] --> B[OpenCV Face Detection\nHaar Cascade Classifier]
+flowchart TD
+    A[Webcam Input] --> B[OpenCV Face Detection]
     B --> C[Eye Region Extraction]
     C --> D[Blink Detection via EAR]
     D --> E{Blink Detected?}
-    E -- Yes --> F[Python Serial Communication-pyserial]
+    E -- Yes --> F[Python Serial pyserial]
     E -- No --> C
     F --> G[Arduino Uno]
     G --> H[Device Control Output]
-`---
-
+```
 Latency: ~30-50ms (webcam frame rate dependent)
 Detection Method: Eye Aspect Ratio (EAR) threshold
 Communication: USB Serial at 9600 baud
-
----
-
+-
 ##  Working
 
 - OpenCV captures frames at ~30 FPS and applies Haar Cascade for face detection
